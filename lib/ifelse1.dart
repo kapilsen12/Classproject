@@ -21,10 +21,10 @@ class _if1State extends State<if1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(controller: _emailCont,
+            TextField(
+              controller: _emailCont,
               decoration: InputDecoration(labelText: 'email'),
             ),
-
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -33,8 +33,9 @@ class _if1State extends State<if1> {
                           builder: (context) => if2(
                                 email: _emailCont.text,
                               )));
-                          },
-                child: Text('sign in'))
+                },
+                child: Text('sign in')),
+
           ],
         ),
       ),

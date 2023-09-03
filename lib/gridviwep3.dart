@@ -22,12 +22,12 @@ class _grid6State extends State<grid6> {
                   mainAxisSpacing: 5,
                 ),
                 children: [
-              Customlist(text: '1200 Rs',),
-                  Customlist(text: '1700 Rs',),
-                  Customlist(text: '1900 Rs',),
-                  Customlist(text: '2500 Rs',),
-                  Customlist(text: '2200 Rs',),
-                  Customlist(text: '2700 Rs',),
+              Customlist(text: '1200 Rs',image: 'assets/blazer.png',),
+                  Customlist(text: '1700 Rs',image: 'assets/iron1.jpg',),
+                  Customlist(text: '1900 Rs',image: 'assets/iron2.jpg',),
+                  Customlist(text: '2500 Rs',image: 'assets/iron3.jpg',),
+                  Customlist(text: '2200 Rs',image: 'assets/suit.png',),
+                  Customlist(text: '2700 Rs',image: 'assets/sunder.png',),
 
             ])));
   }
@@ -35,26 +35,28 @@ class _grid6State extends State<grid6> {
 
 class Customlist extends StatelessWidget {
    Customlist({
-    super.key, required this.text,
+    super.key, required this.text, required this.image,
 
   });
 String text;
+String image;
 
   @override
   Widget build(BuildContext context) {
     return Container(
         color: Colors.grey,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(image: AssetImage('assets/blazer.png')),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            )
+            Expanded(flex: 4,child: Image(image: AssetImage(image), fit: BoxFit.fill,),),
+           Expanded(flex: 1, child:  Text(
+             text,
+             style: TextStyle(
+               fontSize: 20,
+               color: Colors.black,
+               fontWeight: FontWeight.bold,
+             ),
+           ),)
           ],
         ));
   }
